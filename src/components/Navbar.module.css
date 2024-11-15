@@ -1,0 +1,23 @@
+.conteiner {
+    min-width: none;
+    max-width: 80vw;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 20px;
+    padding: 15px;
+    background: rgba(255, 69, 0, 0.8); /* Красноватый оттенок с прозрачностью */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.menu link {
+    color: #fff;
+    margin: 0 15px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}

@@ -9,6 +9,7 @@ const Player = ({ selectedSong, songs, setSelectedSong }) => {
 
     useEffect(() => {
         if (selectedSong && isPlaying) {
+            audioRef.current.src = selectedSong.audio;
             audioRef.current.play();
         } else {
             audioRef.current.pause();

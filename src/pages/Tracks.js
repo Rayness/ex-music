@@ -10,7 +10,8 @@ const Tracks = ({ onSelectSong }) => {
         // Загружаем треки из songs.json
         fetch("/songs.json")
             .then((response) => response.json())
-            .then((data) => setSongs(data));
+            .then((data) => setSongs(data))
+            .catch((error) => console.error("Ошибка загрузки песен:", error));
     }, []);
 
     // Фильтрация треков на основе поиска
