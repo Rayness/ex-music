@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import SongList from "../components/SongList";
+import styles from './Tracks.module.css';
 
-const Tracks = () => {
+
+const Tracks = ({ onSelectSong }) => {
     const [songs, setSongs] = useState([]);
     const [search, setSearch] = useState("");
 
     useEffect(() => {
-        fetch("../db/songs.json")
+        // Загружаем треки из songs.json
+        fetch("/songs.json")
             .then((response) => response.json())
             .then((data) => setSongs(data));
     }, []);
 
+    // Фильтрация треков на основе поиска
     const filteredSongs = songs.filter(
         (song) =>
             song.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -18,14 +21,28 @@ const Tracks = () => {
     );
 
     return (
-        <div className="tracks-page">
+        <div className={styles.tracks__page}>
             <input
                 type="text"
-                placeholder="Поиск..."
+                placeholder="Поиск треков..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
-            <SongList songs={filteredSongs} onPlay={(song) => console.log("Playing:", song)} />
+            <div className={styles.container}>
+                {filteredSongs.map((song, index) => (
+                    <div
+                        key={index}
+                        className={styles.song}
+                        onClick={() => onSelectSong(song)}
+                    >
+                        <img src={song.cover} alt="Обложка трека" />
+                        <div>
+                            <h3>{song.title}</h3>
+                            <h4>{song.artist}</h4>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

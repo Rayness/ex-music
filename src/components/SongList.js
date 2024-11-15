@@ -1,4 +1,5 @@
 import React from "react";
+import './tracks.css'
 
 const SongList = ({ songs, onPlay }) => {
     return (

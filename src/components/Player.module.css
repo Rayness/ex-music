@@ -1,0 +1,101 @@
+.player {
+    position: fixed; /* Фиксируем элемент относительно окна */
+    bottom: 0; /* Прижимаем к нижнему краю */
+    left: 0; /* Выравниваем по левому краю */
+    width: 100%; /* Плеер занимает всю ширину окна */
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Тень над плеером */
+    display: flex; /* Используем flexbox для выравнивания содержимого */
+    align-items: center; /* Выравниваем элементы по центру вертикально */
+    justify-content: space-between; /* Распределяем элементы равномерно */
+    padding: 10px 20px; /* Внутренние отступы */
+    z-index: 1000; /* Плеер всегда поверх других элементов */
+}
+
+.player__center {
+    display: flex; /* Используем flexbox для выравнивания содержимого */
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player__controls {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player__progress {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5vh;
+}
+
+.player__progress_slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.player__progress_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0px;
+    height: 8px;
+    background: #FF5733;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: width 0.3s, height 0.3s;
+}
+
+.player__progress span {
+    font-size: 0.8em;
+    min-width: 35px;
+    text-align: center;
+}
+
+.player__progress_slider::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #FF5733 0%, #FF5733 var(--value, 50%), #ddd var(--value, 50%), #ddd 100%);
+    border-radius: 5px;
+}
+
+.player__info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между изображением и текстом */
+}
+
+.player__info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px; /* Скругление углов обложки */
+}
+
+.volume {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+.volume__slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    outline: none;
+    width: 80px;
+    cursor: pointer;
+}

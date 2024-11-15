@@ -1,0 +1,52 @@
+.tracks__page {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.song {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.song:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.song img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.song h3 {
+    font-size: 1.1em;
+    margin: 0;
+    color: #ffd700;
+}
+
+.song h4 {
+    font-size: 0.9em;
+    margin: 0;
+    color: #fff;
+    opacity: 0.8;
+}
